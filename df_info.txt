@@ -1,0 +1,5 @@
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 171907 entries, 0 to 171906
+Columns: 161 entries, date to acquisition_info
+dtypes: float64(77), int64(6), object(78)
+memory usage: 211.2+ MB

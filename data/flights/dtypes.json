@@ -1,0 +1,12 @@
+{
+    "DAY_OF_WEEK": "uint8",
+    "ORIGIN_AIRPORT": "category",
+    "DESTINATION_AIRPORT": "category",
+    "SCHEDULED_ARRIVAL": "uint16",
+    "ARRIVAL_TIME": "float32",
+    "AIRLINE": "category",
+    "YEAR": "uint16",
+    "SCHEDULED_DEPARTURE": "uint16",
+    "DEPARTURE_TIME": "float32",
+    "TAIL_NUMBER": "category"
+}

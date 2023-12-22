@@ -1,0 +1,12 @@
+{
+    "id": "object",
+    "pdes": "object",
+    "name": "category",
+    "equinox": "category",
+    "epoch": "float32",
+    "orbit_id": "category",
+    "diameter_sigma": "float32",
+    "albedo": "float32",
+    "class": "category",
+    "rms": "float32"
+}

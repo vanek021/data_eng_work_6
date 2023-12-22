@@ -1,0 +1,10 @@
+{
+    "Vict Age": "int64",
+    "Vict Sex": "category",
+    "Vict Descent": "category",
+    "Premis Cd": "float32",
+    "Premis Desc": "category",
+    "Weapon Used Cd": "float32",
+    "Weapon Desc": "category",
+    "Status": "category"
+}
