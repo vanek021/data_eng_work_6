@@ -25,10 +25,11 @@ need_dtypes = read_types("./data/custom/dtypes.json")
 dataset = pd.read_csv("./data/custom/df_sub.csv", usecols=lambda x: x in need_dtypes.keys(), dtype=need_dtypes)
 
 # График 1. Гистограмма по дням
-#plt.figure(figsize=(30,5))
-#sort_dow = dataset['Vict Age'].sort_index()
-#plot = sort_dow.hist()
-#plot.get_figure().savefig("./data/custom/plots/plot1.png")
+#plt.figure(figsize=(15,10))
+#zero_age = dataset[dataset["Vict Age"] == 0]
+#dataset = dataset.drop(zero_age.index)
+#plot = dataset['Vict Age'].value_counts().plot(kind='bar', title='Гистограмма по возрасту жертв')
+#plot.figure.savefig("./data/custom/plots/plot1.png")
 
 # График 2. Скатерограмма по признаку Vict Descent
 #fig = plt.figure(figsize=(15,15))
@@ -36,10 +37,10 @@ dataset = pd.read_csv("./data/custom/df_sub.csv", usecols=lambda x: x in need_dt
 #             hue ='Vict Descent',
 #             palette = 'bwr',).savefig("./data/custom/plots/plot2.png")
 
-
 # График 3. Гистограмма
-#plot = dataset['Weapon Desc'].value_counts().plot(kind='bar', title='weapon desc')
-#plot.figure.savefig("./data/custom/plots/plot3.png")
+plt.figure(figsize=(25,15))
+plot = dataset['Weapon Desc'].value_counts().loc[lambda x : x > 1500].plot(kind='bar', title='weapon desc')
+plot.figure.savefig("./data/custom/plots/plot3.png")
 
 # График 4. 
 #copy = dataset.copy()
