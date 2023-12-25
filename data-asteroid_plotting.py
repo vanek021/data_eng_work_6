@@ -25,10 +25,8 @@ need_dtypes = read_types("./data/asteroid/dtypes.json")
 dataset = pd.read_csv("./data/asteroid/df_sub.csv", usecols=lambda x: x in need_dtypes.keys(), dtype=need_dtypes)
 
 # График 1. Гистограмма по class
-#plt.figure(figsize=(30,5))
-#sort_dow = dataset['class'].sort_index()
-#plot = sort_dow.hist()
-#plot.get_figure().savefig("./data/asteroid/plots/plot1.png")
+#plot = dataset['class'].value_counts().plot(kind='bar', title='class')
+#plot.figure.savefig("./data/asteroid/plots/plot1.png")
 
 # График 2. Скатерограмма по признаку albedo
 #fig = plt.figure(figsize=(15,15))
@@ -36,12 +34,19 @@ dataset = pd.read_csv("./data/asteroid/df_sub.csv", usecols=lambda x: x in need_
 #             hue ='albedo',
 #             palette = 'bwr',).savefig("./data/asteroid/plots/plot2.png")
 
+
+# График 3
+#plt.figure(figsize=(20, 10))
+#plot = dataset['orbit_id'].value_counts().loc[lambda x : x > 2000].plot(kind='bar', title='class')
+#plt.title("orbit_id")
+#plot.figure.savefig("./data/asteroid/plots/plot3.png")
+
 # График 4. 
 #copy = dataset.copy()
 #copy.pop('class')
 #copy.pop("orbit_id")
 #copy.pop("equinox")
-#opy.pop("name")
+#copy.pop("name")
 #copy.pop("pdes")
 #copy.pop("id")
 
@@ -52,6 +57,6 @@ dataset = pd.read_csv("./data/asteroid/df_sub.csv", usecols=lambda x: x in need_
 
 # График 5. Скатерограмма по признаку equinox
 fig = plt.figure(figsize=(15,15))
-sns.pairplot(data = dataset,
-             hue ='equinox',
+sns.pairplot(data = dataset.sample(100000),
+             hue ='albedo',
              palette = 'bwr',).savefig("./data/asteroid/plots/plot5.png")
