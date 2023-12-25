@@ -19,8 +19,8 @@ def handle_file_size(dataset, file_name, output_file_name):
     
     write_to_json(output_file_name, result)
 
-def read_file(file_name, compression=None):
-    return pd.read_csv(file_name)
+def read_file(file_name, compression=None, chunksize=None):
+    return pd.read_csv(file_name, compression=compression, chunksize=chunksize)
 
 def get_memory_stat_by_column(df):
     result = dict()
