@@ -1,0 +1,14 @@
+{
+    "vin": "category",
+    "stockNum": "category",
+    "firstSeen": "category",
+    "lastSeen": "category",
+    "msrp": "float64",
+    "askPrice": "float32",
+    "mileage": "float32",
+    "isNew": "category",
+    "color": "category",
+    "interiorColor": "category",
+    "brandName": "category",
+    "modelName": "category"
+}
